@@ -1,0 +1,11 @@
+.card {
+    @apply shadow;
+    @apply rounded;
+    @apply bg-white;
+}
+
+.dark {
+    .card {
+        @apply bg-gray-800;
+    }
+}

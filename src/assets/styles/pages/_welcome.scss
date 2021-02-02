@@ -1,0 +1,12 @@
+.welcome {
+    @apply grid;
+    @apply w-full;
+    @apply h-screen;
+    @apply bg-white;
+    @apply grid-cols-2;
+
+    path {
+        @apply fill-current;
+        @apply text-gray-900;
+    }
+}

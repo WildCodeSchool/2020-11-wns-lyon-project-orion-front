@@ -1,0 +1,53 @@
+.switch {
+    @apply h-5;
+    @apply w-10;
+    @apply border-0;
+    @apply relative;
+    @apply bg-transparent;
+
+    &:before {
+        content: '';
+        @apply h-5;
+        @apply w-10;
+        @apply flex;
+        @apply bg-gray-300;
+        @apply rounded-full;
+        @apply items-center;
+        @apply cursor-pointer;
+    }
+
+    &:after {
+        content: '';
+
+        @apply h-5;
+        @apply w-5;
+        @apply top-0;
+        @apply left-0;
+        @apply shadow;
+        @apply bg-white;
+        @apply absolute;
+        @apply rounded-full;
+        @apply transition-transform;
+    }
+
+    &:checked:before {
+        @apply bg-green-500;
+    }
+
+    &:checked:after {
+        @apply transform;
+        @apply translate-x-5;
+    }
+}
+
+.dark {
+    .switch {
+        &:before {
+            @apply bg-gray-700;
+        }
+
+        &:checked:before {
+            @apply bg-green-500;
+        }
+    }
+}

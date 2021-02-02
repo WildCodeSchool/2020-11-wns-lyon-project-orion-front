@@ -1,0 +1,16 @@
+.input[type='text'],
+.input[type='password'] {
+    @apply h-14;
+    @apply px-4;
+    @apply border;
+    @apply rounded;
+    @apply text-sm;
+    @apply bg-white;
+    @apply text-gray-900;
+    @apply border-gray-300;
+
+    &:focus {
+        @apply border-gray-900;
+    }
+}
+

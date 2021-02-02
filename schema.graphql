@@ -1,0 +1,147 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Like {
+    createdAt: DateTime!
+    emitter: User!
+    id: Int!
+    post: Post!
+    receiver: User!
+}
+
+type Mutation {
+    createPost(input: CreatePostInput!): Post!
+    createReport(input: CreateReportInput!): Report!
+    createUser(input: CreateUserInput!): User!
+    refresh: SignInOutput!
+    signIn(input: SignInInput!): SignInOutput!
+    signOut: Boolean!
+    toggleBlock(receiverId: Float!): Boolean!
+    toggleLike(postId: Float!): Boolean!
+    updateReport(id: Float!, input: UpdateReportInput!): Report!
+}
+
+type Post {
+    author: User!
+    children: [Post!]!
+    content: String!
+    createdAt: DateTime!
+    deletedAt: DateTime
+    id: Int!
+    likes: [Like!]!
+    parent: Post!
+    updatedAt: DateTime!
+}
+
+type PostEdge {
+    cursor: String
+    node: Post
+}
+
+type PostsOutput {
+    edges: [PostEdge!]
+    hasMore: Boolean!
+    nodes: [Post!]
+}
+
+type Query {
+    currentUser: User!
+    emailExists(email: String!): Boolean!
+    posts(input: PostsInput!): PostsOutput!
+}
+
+type Report {
+    createdAt: DateTime!
+    emitter: User!
+    id: Int!
+    referenceId: Int!
+    status: ReportStatus!
+    type: ReportTypes!
+    updatedAt: DateTime!
+}
+
+type SignInOutput {
+    accessToken: String!
+    expiresIn: Float!
+    user: User!
+}
+
+type User {
+    createdAt: DateTime!
+    deletedAt: DateTime
+    email: String!
+    firstName: String!
+    gender: UserGenders!
+    id: Int!
+    lastName: String!
+    password: String!
+    pid: String!
+    roles: [UserRoles!]!
+    updatedAt: DateTime!
+}
+
+enum ReportStatus {
+    CANCELLED
+    COMPLETED
+    PENDING
+}
+
+enum ReportTypes {
+    MESSAGE
+    POST
+    PROFILE
+}
+
+enum UserGenders {
+    FEMALE
+    MALE
+}
+
+enum UserRoles {
+    ADMIN
+    STUDENT
+    TEACHER
+}
+
+input CreatePostInput {
+    content: String!
+    parentId: Float
+}
+
+input CreateReportInput {
+    referenceId: Int!
+    type: ReportTypes!
+}
+
+input CreateUserInput {
+    birthDate: DateTime!
+    email: String!
+    firstName: String!
+    gender: UserGenders!
+    lastName: String!
+    password: String!
+    roles: [UserRoles!]
+}
+
+input PostsInput {
+    cursor: String
+    take: Int = 10
+}
+
+input SignInInput {
+    email: String!
+    password: String!
+    remember: Boolean!
+}
+
+input UpdateReportInput {
+    status: ReportStatus!
+}
+
+
+"A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format."
+scalar DateTime

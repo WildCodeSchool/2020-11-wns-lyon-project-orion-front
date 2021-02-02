@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+// Base
+@import 'base/body';
+@import 'base/fonts';
+@import 'base/global';
+
+// Components
+@import 'components/alert';
+@import 'components/button';
+@import 'components/card';
+@import 'components/input';
+@import 'components/search';
+@import 'components/switch';
+
+// Pages
+@import 'pages/welcome';
+
+// Containers
+@import 'containers/header';
+

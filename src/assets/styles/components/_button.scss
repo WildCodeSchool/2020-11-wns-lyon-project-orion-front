@@ -1,0 +1,28 @@
+.btn {
+    @apply h-14;
+    @apply text-xs;
+    @apply rounded;
+    @apply font-bold;
+    @apply uppercase;
+    @apply bg-transparent;
+}
+
+.btn-primary {
+    @apply text-white;
+    @apply bg-red-500;
+
+    &:hover {
+        @apply bg-red-600;
+    }
+}
+
+.btn-outline-secondary {
+    @apply border;
+    @apply text-gray-900;
+    @apply border-gray-300;
+
+    &:hover {
+        @apply border-gray-900;
+    }
+}
+

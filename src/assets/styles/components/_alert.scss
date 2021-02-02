@@ -1,0 +1,22 @@
+.alert {
+    @apply p-4;
+    @apply w-full;
+    @apply border;
+    @apply text-sm;
+    @apply rounded;
+    @apply text-center;
+}
+
+.alert-danger {
+    @apply bg-red-500;
+    @apply text-red-500;
+    @apply border-red-500;
+    @apply bg-opacity-10;
+}
+
+.alert-success {
+    @apply bg-green-500;
+    @apply text-green-500;
+    @apply border-green-500;
+    @apply bg-opacity-10;
+}

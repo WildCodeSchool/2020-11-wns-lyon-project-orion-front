@@ -1,0 +1,26 @@
+.search {
+    @apply h-12;
+    @apply px-4;
+    @apply flex;
+    @apply gap-4;
+    @apply rounded;
+    @apply bg-gray-200;
+    @apply items-center;
+
+    input {
+        @apply h-full;
+        @apply w-full;
+        @apply text-gray-900;
+        @apply bg-transparent;
+    }
+}
+
+.dark {
+    .search {
+        @apply bg-gray-950;
+    }
+
+    .search input {
+        @apply text-white;
+    }
+}

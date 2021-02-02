@@ -1,0 +1,98 @@
+.header {
+    @apply z-10;
+    @apply h-20;
+    @apply top-0;
+    @apply fixed;
+    @apply w-full;
+    @apply shadow;
+    @apply bg-white;
+
+    svg {
+        @apply text-gray-900;
+        @apply fill-current;
+    }
+
+    .popover {
+        @apply card;
+
+        @apply z-10;
+        @apply w-64;
+        @apply right-0;
+        @apply absolute;
+        @apply transform;
+        @apply shadow-lg;
+        @apply translate-y-4;
+        @apply overflow-hidden;
+
+        .theme-item {
+            @apply px-8;
+            @apply py-4;
+            @apply text-sm;
+            @apply border-t;
+            @apply border-b;
+            @apply font-medium;
+            @apply text-gray-500;
+            @apply cursor-pointer;
+            @apply border-gray-300;
+
+            &:hover {
+                @apply text-gray-900;
+            }
+        }
+
+        .account-item {
+            @apply cursor-pointer;
+            @apply text-gray-500;
+            @apply font-medium;
+            @apply text-sm;
+
+            &:hover {
+                @apply text-gray-900;
+            }
+        }
+    }
+
+    .nav-item {
+        @apply px-4;
+        @apply flex;
+        @apply h-full;
+        @apply border-b-2;
+        @apply items-center;
+        @apply text-gray-500;
+        @apply justify-center;
+        @apply cursor-pointer;
+        @apply border-transparent;
+
+        &.active {
+            @apply text-red-500;
+            @apply border-red-500;
+        }
+
+        &:hover {
+            @apply text-gray-900;
+        }
+    }
+}
+
+
+.dark {
+    .header {
+        @apply bg-gray-800;
+    }
+
+    .header path {
+        @apply text-white;
+        @apply fill-current;
+    }
+
+    .header .popover .theme-item {
+        @apply border-gray-700;
+    }
+
+    .header .nav-item:hover,
+    .header .popover .theme-item:hover,
+    .header .popover .account-item:hover {
+        @apply text-white;
+    }
+}
+
