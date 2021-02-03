@@ -4,14 +4,15 @@ import {getMainDefinition} from '@apollo/client/utilities';
 import {WebSocketLink} from '@apollo/client/link/ws';
 import {setContext} from '@apollo/client/link/context';
 import {onError} from '@apollo/client/link/error';
+import { environment } from '../environments/environment';
 
 export const useApollo = (token: string, refresh: () => Promise<string>) => {
 
-    const httpLink = new HttpLink({uri: process.env.HTTP_URI, credentials: 'include'});
+    const httpLink = new HttpLink({uri: environment.httpUri, credentials: 'include'});
 
     const contextLink = setContext(() => ({headers: {authorization: 'Bearer ' + token}}));
 
-    const wsClient = new SubscriptionClient(process.env.WS_URI, {
+    const wsClient = new SubscriptionClient(environment.wsUri, {
         reconnect: true,
         lazy: true,
         connectionParams: () => ({
