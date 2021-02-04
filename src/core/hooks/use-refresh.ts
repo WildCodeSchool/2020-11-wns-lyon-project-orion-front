@@ -8,7 +8,7 @@ import useSignOut from './use-sign-out';
 const client = new ApolloClient({
     credentials: 'included',
     cache: new InMemoryCache(),
-    uri: 'http://localhost:3001/graphql',
+    uri: 'http://localhost:4000/graphql',
 })
 
 export const useRefresh = () => {

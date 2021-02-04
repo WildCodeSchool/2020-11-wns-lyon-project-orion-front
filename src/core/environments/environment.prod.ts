@@ -1,4 +1,4 @@
 export const environment = {
-  httpUri: 'http://localhost:3001/graphql',
-  wsUri: 'ws://localhost:3001/graphql'
+  httpUri: 'http://localhost:4000/graphql',
+  wsUri: 'ws://localhost:4000/graphql'
 } 
