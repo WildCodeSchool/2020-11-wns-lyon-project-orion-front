@@ -13,7 +13,7 @@ const Studies = ({children}) => {
                 <span className="material-icons">folder_open</span>
                 <span className="text-sm">Médiathèque</span>
             </NavLink>
-            <NavLink to="/studies/Quiz" className="flex items-center gap-4 text-gray-500 font-medium">
+            <NavLink to="/studies/Exam" className="flex items-center gap-4 text-gray-500 font-medium">
                 <span className="material-icons">flaky</span>
                 <span className="" text-sm>Quiz</span>
             </NavLink>

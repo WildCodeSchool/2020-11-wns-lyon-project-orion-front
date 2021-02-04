@@ -7,7 +7,8 @@ import Users from './pages/Users';
 import Studies from './pages/Studies';
 import Calendar from './pages/Studies/Calendar';
 import Medias from './pages/Studies/Medias';
-import Quiz from './pages/Studies/Quiz';
+import Exam from './pages/Studies/Exam';
+import FormExam from './pages/Studies/Exam/FormExam';
 import Profile from './pages/Account/Profile';
 import Parameters from './pages/Account/Parameters';
 import Notifications from './pages/Notifications';
@@ -30,7 +31,8 @@ function App() {
                     <Route path='/studies' render={() => <Studies>
                         <Route exact path='/studies' component={Calendar}/>
                         <Route exact path='/studies/medias' component={Medias}/>
-                        <Route exact path='/studies/quiz' component={Quiz}/>
+                        <Route exact path='/studies/exam' component={Exam}/>
+                        <Route exact path='/studies/exam/FormExam' component={FormExam}/>
                     </Studies>}/>
 
                     <Route path='/account' render={() => <>
